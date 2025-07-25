@@ -52,4 +52,6 @@ composer require easycorp/easyadmin-bundle
 Pour ajouter les modifications sur Git :
 git add .
 git commit -m "Ajout de nouveaux fichiers"
+git commit -m "Ajout IndexController, ReadMe.md,Tailwind "
+git commit -m "Créations d'entités et migrations"
 git push
