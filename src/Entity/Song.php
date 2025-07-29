@@ -35,8 +35,9 @@ class Song
     #[ORM\JoinColumn(nullable: false)]
     private ?User $uploadedBy = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTime $createdAt = null;
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $createdAt = null;
+
 
     #[ORM\ManyToOne(inversedBy: 'songs')]
     private ?Category $category = null;
@@ -148,10 +149,9 @@ class Song
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTime $createdAt): static
+    public function setCreatedAt(\DateTimeInterface $createdAt): static
     {
         $this->createdAt = $createdAt;
-
         return $this;
     }
 
