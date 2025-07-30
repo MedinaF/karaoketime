@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail : {{ song.title }}{% endblock %}
+
+{% block body %}
+<h1>{{ song.title }} — {{ song.artist }}</h1>
+
+<p>
+  <strong>Catégorie :</strong>
+  {{ song.category.name }}
+</p>
+
+{% if song.image %}
+  <img src="{{ asset('uploads/' ~ song.image) }}" alt="{{ song.title }}" style="max-width:200px;">
+{% endif %}
+
+<p>
+  <strong>Paroles :</strong><br>
+  {{ song.lyrics|nl2br }}
+</p>
+
+<p>
+  <a href="{{ song.youtubeLink }}" target="_blank">Voir sur YouTube</a>
+</p>
+
+<p>
+  <small>Ajoutée le {{ song.createdAt|date('d/m/Y H:i') }} par {{ song.uploadedBy.username }}</small>
+</p>
+
+<hr>
+
+<a href="{{ path('song_index') }}">← Retour à la liste</a>
+{% endblock %}
