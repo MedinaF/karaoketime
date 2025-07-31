@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter une chanson{% endblock %}
+
+{% block body %}
+  <h1>Ajouter une nouvelle chanson</h1>
+
+  {# Début du formulaire avec gestion de l'upload de fichier #}
+  {{ form_start(songForm, {'attr': {'enctype': 'multipart/form-data'}}) }}
+    
+    {{ form_row(songForm.title) }} {# Champ pour le titre de la chanson #}
+    {{ form_row(songForm.artist) }} {# Champ pour l'artiste #}
+    {{ form_row(songForm.youtubeLink) }} {# Champ pour le lien YouTube #}
+    {{ form_row(songForm.lyrics) }} {# Champ pour les paroles #}
+    {{ form_row(songForm.image) }} {# Champ pour l'image de couverture #}
+    {{ form_row(songForm.category) }} {# Champ pour la catégorie #}
+
+    {# Bouton de soumission du formulaire #}
+    <button class="btn">Enregistrer</button>

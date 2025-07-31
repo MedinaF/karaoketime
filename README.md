@@ -28,12 +28,13 @@ Les fonctionnalités prévues pour ce projet sont les suivantes :
 
 
 #### Là où j'ai eu des difficultés 
+j'ai p
 
 
 
 ---
 
-##### Ce que j'aurai aimé terminer/ajoutER à mon projet : 
+##### Ce que j'aurai aimé terminer/ajouter à mon projet : 
 
 
 ---

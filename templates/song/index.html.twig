@@ -6,14 +6,18 @@
 <h1>Liste des chansons</h1>
 
 <ul>
+  {# Boucle sur toutes les chansons #}
   {% for song in songs %}
     <li>
+      {# Lien vers la page de détail de la chanson #}
       <a href="{{ path('song_show', { id: song.id }) }}">
         {{ song.title }} — {{ song.artist }}
       </a>
+      {# Affiche la date de publication #}
       <small>(publiée le {{ song.createdAt|date('d/m/Y') }})</small>
     </li>
   {% else %}
+    {# Message pour si aucune chanson n'est disponible #}
     <li>Aucune chanson pour l’instant.</li>
   {% endfor %}
 </ul>

@@ -3,31 +3,38 @@
 {% block title %}Détail : {{ song.title }}{% endblock %}
 
 {% block body %}
-<h1>{{ song.title }} — {{ song.artist }}</h1>
+    {# Titre et artiste de la chanson #}
+    <h1>{{ song.title }} — {{ song.artist }}</h1>
 
-<p>
-  <strong>Catégorie :</strong>
-  {{ song.category.name }}
-</p>
+    {# Affichage de la catégorie #}
+    <p>
+      <strong>Catégorie :</strong>
+      {{ song.category.name }}
+    </p>
 
-{% if song.image %}
-  <img src="{{ asset('uploads/' ~ song.image) }}" alt="{{ song.title }}" style="max-width:200px;">
-{% endif %}
+    {# Affichage de l'image de couverture si elle existe #}
+    {% if song.image %}
+      <img src="{{ asset('uploads/' ~ song.image) }}" alt="{{ song.title }}" style="max-width:200px;">
+    {% endif %}
 
-<p>
-  <strong>Paroles :</strong><br>
-  {{ song.lyrics|nl2br }}
-</p>
+    {# Affichage des paroles #}
+    <p>
+      <strong>Paroles :</strong><br>
+      {{ song.lyrics|nl2br }}
+    </p>
 
-<p>
-  <a href="{{ song.youtubeLink }}" target="_blank">Voir sur YouTube</a>
-</p>
+    {# Lien vers la vidéo YouTube #}
+    <p>
+      <a href="{{ song.youtubeLink }}" target="_blank">Voir sur YouTube</a>
+    </p>
 
-<p>
-  <small>Ajoutée le {{ song.createdAt|date('d/m/Y H:i') }} par {{ song.uploadedBy.username }}</small>
-</p>
+    {# Informations sur la date d'ajout et l'utilisateur #}
+    <p>
+      <small>Ajoutée le {{ song.createdAt|date('d/m/Y H:i') }} par {{ song.uploadedBy.username }}</small>
+    </p>
 
-<hr>
+    <hr>
 
-<a href="{{ path('song_index') }}">← Retour à la liste</a>
-{% endblock %}
+    {# Lien de retour à la liste des chansons #}
+    <a href="{{ path('song_index') }}">← Retour à la liste</a>
+{% endblock
