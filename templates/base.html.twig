@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
+            
             <style>
                 body {
                     background: linear-gradient(135deg, #1a2980, #26d0ce);
@@ -74,9 +75,32 @@
                 main {
                     flex: 1;
                 }
+                .form-group {
+                    margin-bottom: 18px;
+                    text-align: left;
+                }
+                form label {
+                    font-weight: bold;
+                    color: #ffe066;
+                }
+                form input, form textarea, form select {
+                    width: 100%;
+                    padding: 10px;
+                    border-radius: 8px;
+                    border: none;
+                    margin-top: 5px;
+                    font-size: 1em;
+                    background: #f8f9fa;
+                    color: #1a2980;
+                }
+                form input[type="file"] {
+                    background: none;
+                    color: #fff;
+                }
             </style>
         {% endblock %}
         {% block javascripts %}
+
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
         

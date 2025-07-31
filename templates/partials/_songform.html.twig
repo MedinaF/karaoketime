@@ -1,0 +1,27 @@
+{# templates/partials/_songform.html.twig #}
+<div class="karaoke-container">
+    <h1>Ajouter une nouvelle chanson</h1>
+    {{ form_start(songForm, {'attr': {'enctype': 'multipart/form-data'}}) }}
+
+        <div class="form-group">
+            {{ form_row(songForm.title) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(songForm.artist) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(songForm.youtubeLink) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(songForm.lyrics) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(songForm.image) }}
+        </div>
+        <div class="form-group">
+            {{ form_row(songForm.category) }}
+        </div>
+
+        <button class="karaoke-btn" style="margin-top:20px;">Enregistrer</button>
+    {{ form_end(songForm) }}
+</div>
